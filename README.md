@@ -1,15 +1,18 @@
 ## ############### git-------------------------------------------------
-    git add README              <- dodanie nowego pliku do repozytoriumgit config --global core.editor
+    git add README              <- dodanie nowego pliku do repozytorium
     git commit -a -m 'comment'  <- zatwierdzanie zmian
     git remote -v               <- podgląd aktywnych zdalnych repozytoriów
-    git push aquarius master    <- wysłanie zmian do zdalnego repozytorium
+    git push aquarius main      <- wysłanie zmian do zdalnego repozytorium
+    git remote show aquarius    <- informacje o konkretnym zdalnym repozytorium
+
+    git fetch aquarius --prune    <- pobranie zmian ze zdalnego repozytorium 
 ## -------------------------------------------------------------------
 
 
 ## Quick Start
 
-- [Download the latest release](https://github.com/coreui/coreui-free-angular-admin-template/)
-- Clone the repo: `git clone https://github.com/coreui/coreui-free-angular-admin-template.git`
+- [Download the latest release](https://github.com/andyq1409/aquarius/)
+- Clone the repo: `git clone https://github.com/andyq1409/aquarius.git`
 
 #### <i>Prerequisites</i>
 Before you begin, make sure your development environment includes `Node.js®` and an `npm` package manager.
@@ -54,7 +57,7 @@ $ npm run build
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
 ```
-coreui-free-angular-admin-template
+aquarius
 ├── src/                         # project root
 │   ├── app/                     # main app directory
 |   │   ├── containers/          # layout containers
