@@ -5,7 +5,7 @@
     git push aquarius main      <- wysłanie zmian do zdalnego repozytorium
     git remote show aquarius    <- informacje o konkretnym zdalnym repozytorium
 
-    git fetch aquarius --prune    <- pobranie zmian ze zdalnego repozytorium 
+    git pull aquarius --prune   <- pobranie zmian ze zdalnego repozytorium 
 ## -------------------------------------------------------------------
 
 
