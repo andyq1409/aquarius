@@ -1,5 +1,8 @@
 ## ############### git-------------------------------------------------
-
+    git add README              <- dodanie nowego pliku do repozytoriumgit config --global core.editor
+    git commit -a -m 'comment'  <- zatwierdzanie zmian
+    git remote -v               <- podgląd aktywnych zdalnych repozytoriów
+    git push aquarius master    <- wysłanie zmian do zdalnego repozytorium
 ## -------------------------------------------------------------------
 
 
