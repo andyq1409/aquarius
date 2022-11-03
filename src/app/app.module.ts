@@ -40,6 +40,7 @@ import {
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AquaComponent } from './views/pages/aqua/aqua.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -48,7 +49,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS],
+  declarations: [AppComponent, ...APP_CONTAINERS, AquaComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

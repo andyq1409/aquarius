@@ -3,7 +3,7 @@ import { INavData } from '@coreui/angular';
 export const navItems: INavData[] = [
   {
     name: 'Dashboard',
-    url: '/dashboard',
+    url: '/aqua/dashboard',
     iconComponent: { name: 'cil-speedometer' },
     badge: {
       color: 'info',
@@ -16,12 +16,12 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Colors',
-    url: '/theme/colors',
+    url: '/aqua/theme/colors',
     iconComponent: { name: 'cil-drop' }
   },
   {
     name: 'Typography',
-    url: '/theme/typography',
+    url: '/aqua/theme/typography',
     linkProps: { fragment: 'someAnchor' },
     iconComponent: { name: 'cil-pencil' }
   },
@@ -31,142 +31,142 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Base',
-    url: '/base',
+    url: '/aqua/base',
     iconComponent: { name: 'cil-puzzle' },
     children: [
       {
         name: 'Accordion',
-        url: '/base/accordion'
+        url: '/aqua/base/accordion'
       },
       {
         name: 'Breadcrumbs',
-        url: '/base/breadcrumbs'
+        url: '/aqua/base/breadcrumbs'
       },
       {
         name: 'Cards',
-        url: '/base/cards'
+        url: '/aqua/base/cards'
       },
       {
         name: 'Carousel',
-        url: '/base/carousel'
+        url: '/aqua/base/carousel'
       },
       {
         name: 'Collapse',
-        url: '/base/collapse'
+        url: '/aqua/base/collapse'
       },
       {
         name: 'List Group',
-        url: '/base/list-group'
+        url: '/aqua/base/list-group'
       },
       {
         name: 'Navs & Tabs',
-        url: '/base/navs'
+        url: '/aqua/base/navs'
       },
       {
         name: 'Pagination',
-        url: '/base/pagination'
+        url: '/aqua/base/pagination'
       },
       {
         name: 'Placeholder',
-        url: '/base/placeholder'
+        url: '/aqua/base/placeholder'
       },
       {
         name: 'Popovers',
-        url: '/base/popovers'
+        url: '/aqua/base/popovers'
       },
       {
         name: 'Progress',
-        url: '/base/progress'
+        url: '/aqua/base/progress'
       },
       {
         name: 'Spinners',
-        url: '/base/spinners'
+        url: '/aqua/base/spinners'
       },
       {
         name: 'Tables',
-        url: '/base/tables'
+        url: '/aqua/base/tables'
       },
       {
         name: 'Tabs',
-        url: '/base/tabs'
+        url: '/aqua/base/tabs'
       },
       {
         name: 'Tooltips',
-        url: '/base/tooltips'
+        url: '/aqua/base/tooltips'
       }
     ]
   },
   {
     name: 'Buttons',
-    url: '/buttons',
+    url: '/aqua/buttons',
     iconComponent: { name: 'cil-cursor' },
     children: [
       {
         name: 'Buttons',
-        url: '/buttons/buttons'
+        url: '/aqua/buttons/buttons'
       },
       {
         name: 'Button groups',
-        url: '/buttons/button-groups'
+        url: '/aqua/buttons/button-groups'
       },
       {
         name: 'Dropdowns',
-        url: '/buttons/dropdowns'
+        url: '/aqua/buttons/dropdowns'
       },
     ]
   },
   {
     name: 'Forms',
-    url: '/forms',
+    url: '/aqua/forms',
     iconComponent: { name: 'cil-notes' },
     children: [
       {
         name: 'Form Control',
-        url: '/forms/form-control'
+        url: '/aqua/forms/form-control'
       },
       {
         name: 'Select',
-        url: '/forms/select'
+        url: '/aqua/forms/select'
       },
       {
         name: 'Checks & Radios',
-        url: '/forms/checks-radios'
+        url: '/aqua/forms/checks-radios'
       },
       {
         name: 'Range',
-        url: '/forms/range'
+        url: '/aqua/forms/range'
       },
       {
         name: 'Input Group',
-        url: '/forms/input-group'
+        url: '/aqua/forms/input-group'
       },
       {
         name: 'Floating Labels',
-        url: '/forms/floating-labels'
+        url: '/aqua/forms/floating-labels'
       },
       {
         name: 'Layout',
-        url: '/forms/layout'
+        url: '/aqua/forms/layout'
       },
       {
         name: 'Validation',
-        url: '/forms/validation'
+        url: '/aqua/forms/validation'
       }
     ]
   },
   {
     name: 'Charts',
-    url: '/charts',
+    url: '/aqua/charts',
     iconComponent: { name: 'cil-chart-pie' }
   },
   {
     name: 'Icons',
     iconComponent: { name: 'cil-star' },
-    url: '/icons',
+    url: '/aqua/icons',
     children: [
       {
         name: 'CoreUI Free',
-        url: '/icons/coreui-icons',
+        url: '/aqua/icons/coreui-icons',
         badge: {
           color: 'success',
           text: 'FREE'
@@ -174,40 +174,40 @@ export const navItems: INavData[] = [
       },
       {
         name: 'CoreUI Flags',
-        url: '/icons/flags'
+        url: '/aqua/icons/flags'
       },
       {
         name: 'CoreUI Brands',
-        url: '/icons/brands'
+        url: '/aqua/icons/brands'
       }
     ]
   },
   {
     name: 'Notifications',
-    url: '/notifications',
+    url: '/aqua/notifications',
     iconComponent: { name: 'cil-bell' },
     children: [
       {
         name: 'Alerts',
-        url: '/notifications/alerts'
+        url: '/aqua/notifications/alerts'
       },
       {
         name: 'Badges',
-        url: '/notifications/badges'
+        url: '/aqua/notifications/badges'
       },
       {
         name: 'Modal',
-        url: '/notifications/modal'
+        url: '/aqua/notifications/modal'
       },
       {
         name: 'Toast',
-        url: '/notifications/toasts'
+        url: '/aqua/notifications/toasts'
       }
     ]
   },
   {
     name: 'Widgets',
-    url: '/widgets',
+    url: '/aqua/widgets',
     iconComponent: { name: 'cil-calculator' },
     badge: {
       color: 'info',
