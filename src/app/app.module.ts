@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Import routing module
 import { AppRoutingModule } from './app-routing.module';
@@ -36,11 +36,14 @@ import {
   SidebarModule,
   TabsModule,
   UtilitiesModule,
+  AlertModule
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AquaComponent } from './views/pages/aqua/aqua.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { authInterceptorProviders } from './interceptors/auth.interceptor';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -68,6 +71,7 @@ const APP_CONTAINERS = [
     UtilitiesModule,
     ButtonGroupModule,
     ReactiveFormsModule,
+    FormsModule,
     SidebarModule,
     SharedModule,
     TabsModule,
@@ -76,7 +80,8 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    NgbModule,
+    HttpClientModule,
+    AlertModule
   ],
   providers: [
     {
@@ -84,7 +89,8 @@ const APP_CONTAINERS = [
       useClass: HashLocationStrategy,
     },
     IconSetService,
-    Title
+    Title,
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent],
 })
