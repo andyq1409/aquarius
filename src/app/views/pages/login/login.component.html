@@ -5,8 +5,13 @@
         <c-card-group>
           <c-card class="p-4">
             <c-card-body>
-              <form cForm name="form" #frm="ngForm" 
-              (ngSubmit)="frm.form.valid && onSubmit()" novalidate>
+              <form
+                cForm
+                name="form"
+                #frm="ngForm"
+                (ngSubmit)="frm.form.valid && onSubmit()"
+                novalidate
+              >
                 <h1>Logowanie</h1>
                 <p class="text-medium-emphasis">Zaloguj się na swoje konto</p>
                 <c-input-group class="mt-3">
@@ -16,6 +21,8 @@
                   <input
                     autoComplete="username"
                     cFormControl
+                    required
+                    minlength="4"
                     placeholder="Nazwa użytk. (login)"
                     name="usrnam"
                     [(ngModel)]="this.username"
@@ -26,9 +33,14 @@
                   <c-alert
                     color="danger"
                     class="d-flex align-items-center"
-                    *ngIf="usrnam.errors && frm.submitted"
+                    *ngIf="usrnam.errors && frm.touched"
                   >
-                    <div>Pole jest wymagane</div>
+                    <div *ngIf="usrnam.errors['required']">
+                      Pole jest wymagane
+                    </div>
+                    <div *ngIf="usrnam.errors['minlength']">
+                      Login musi mieć ponad 3 znaki
+                    </div>
                   </c-alert>
                 </ng-container>
                 <c-input-group class="mt-3">
@@ -45,16 +57,21 @@
                     required
                     minlength="6"
                     #passwd="ngModel"
+                    (input)="printModel(passwd)"
                   />
                 </c-input-group>
                 <ng-container>
                   <c-alert
                     color="danger"
                     class="d-flex align-items-center"
-                    *ngIf="passwd.errors && frm.submitted"
+                    *ngIf="passwd.errors && frm.touched"
                   >
-                    <div *ngIf="passwd.errors['required']">Pole jest wymagane</div>
-                    <div *ngIf="passwd.errors['minlength']">Hasło musi mieć ponad 6 znaków</div>
+                    <div *ngIf="passwd.errors['required']">
+                      Pole jest wymagane
+                    </div>
+                    <div *ngIf="passwd.errors['minlength']">
+                      Hasło musi mieć ponad 6 znaków
+                    </div>
                   </c-alert>
                 </ng-container>
                 <c-row class="mt-3">
@@ -64,6 +81,7 @@
                       class="px-4"
                       color="primary"
                       type="submit"
+                      [disabled]="frm.invalid"
                     >
                       Login
                     </button>

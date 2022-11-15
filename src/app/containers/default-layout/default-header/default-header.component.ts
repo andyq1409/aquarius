@@ -27,7 +27,7 @@ export class DefaultHeaderComponent extends HeaderComponent {
   }
 
   ngOnInit(): void {
-    this.user = this.tokenStorage.getUser();
+    this.user = this.tokenStorage.getUserName();
   }
 
   logout(): void {  

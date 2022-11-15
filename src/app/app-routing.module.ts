@@ -97,7 +97,16 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     data: {
-      title: 'Register Page'
+      title: 'Register Page',
+      oper: 'register'    
+    }
+  },
+  {
+    path: 'chgpasswd',
+    component: RegisterComponent,
+    data: {
+      title: 'Register Page',
+      oper: 'chgpasswd'    
     }
   },
   {path: '**', redirectTo: 'dashboard'}

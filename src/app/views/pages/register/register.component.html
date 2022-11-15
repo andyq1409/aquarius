@@ -4,33 +4,132 @@
       <c-col lg="7" md="9" xl="6">
         <c-card class="mx-4">
           <c-card-body class="p-4">
-            <form cForm>
-              <h1>Register</h1>
-              <p class="text-medium-emphasis">Create your account</p>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>
-                  <svg cIcon name="cilUser"></svg>
-                </span>
-                <input autoComplete="name" cFormControl placeholder="Username" />
-              </c-input-group>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>@</span>
-                <input autoComplete="email" cFormControl placeholder="Email" />
-              </c-input-group>
-              <c-input-group class="mb-3">
+            <form
+              cForm
+              #frm="ngForm"
+              (ngSubmit)="frm.form.valid && onSubmit()"
+              novalidate
+            >
+              <h3>{{ tittle }}</h3>
+              <p class="text-medium-emphasis">{{ descr }}</p>
+              <!-- ----------------------------------------------------- -->
+              <c-input-group class="mt-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" />
+                <input
+                  cFormControl
+                  [(ngModel)]="this.oldPasswd"
+                  name="oldPas"
+                  placeholder="Stare hasło"
+                  type="password"
+                  #oldPas="ngModel"
+                  minlength="4"
+                  required
+                />
               </c-input-group>
-              <c-input-group class="mb-4">
+              <ng-container>
+                <c-alert
+                  color="danger"
+                  class="d-flex align-items-center"
+                  *ngIf="oldPas.errors && frm.touched"
+                >
+                  <div *ngIf="oldPas.errors['required']">
+                    Pole jest wymagane
+                  </div>
+                  <div *ngIf="oldPas.errors['minlength']">
+                    Login musi mieć ponad 3 znaki
+                  </div>
+                </c-alert>
+              </ng-container>
+              <!-- ----------------------------------------------------- -->
+              <c-input-group class="mt-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" />
+                <input
+                  cFormControl
+                  [(ngModel)]="this.newPasswd"
+                  name="newPas"
+                  placeholder="Nowe hasło"
+                  type="password"
+                  #newPas="ngModel"
+                  required
+                  minlength="8"
+                />
               </c-input-group>
-              <div class="d-grid">
-                <button cButton color="success">Create Account</button>
+              <ng-container>
+                <c-alert
+                  color="danger"
+                  class="d-flex align-items-center"
+                  *ngIf="newPas.errors && frm.touched"
+                >
+                  <div *ngIf="newPas.errors['required']">
+                    Pole jest wymagane
+                  </div>
+                  <div *ngIf="newPas.errors['minlength']">
+                    Login musi mieć ponad 7 znaków
+                  </div>
+                </c-alert>
+                <c-alert
+                  color="danger"
+                  class="d-flex align-items-center mt-3"
+                  *ngIf="repPas.value == oldPas.value"
+                >
+                  <div>Stare i nowe hasło jednakowe</div>
+                </c-alert>
+              </ng-container>
+              <!-- ----------------------------------------------------- -->
+              <c-input-group class="mt-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input
+                  cFormControl
+                  placeholder="Powtórz nowe hasło"
+                  type="password"
+                  [(ngModel)]="this.repPasswd"
+                  name="rePas"
+                  #repPas="ngModel"
+                  required
+                  minlength="8"
+                />
+              </c-input-group>
+              <ng-container>
+                <c-alert
+                  color="danger"
+                  class="d-flex align-items-center"
+                  *ngIf="repPas.errors && frm.touched"
+                >
+                  <div *ngIf="repPas.errors['required']">
+                    Pole jest wymagane
+                  </div>
+                  <div *ngIf="repPas.errors['minlength']">
+                    Login musi mieć ponad 7 znaków
+                  </div>
+                </c-alert>
+                <c-alert
+                  color="danger"
+                  class="d-flex align-items-center mt-3"
+                  *ngIf="repPas.value != newPas.value"
+                >
+                  <div>Niezgodne nowe hasła</div>
+                </c-alert>
+              </ng-container>
+              <!-- ----------------------------------------------------- -->
+              <div class="d-grid mt-3">
+                <button
+                  cButton
+                  type="submit"
+                  color="primary"
+                  [disabled]="
+                    frm.invalid ||
+                    repPas.value != newPas.value ||
+                    oldPas.value == newPas.value
+                  "
+                >
+                  {{ btnLabel }}
+                </button>
               </div>
             </form>
           </c-card-body>
